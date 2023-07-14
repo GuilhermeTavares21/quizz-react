@@ -14,7 +14,7 @@ const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   
 return(
   <>
-  <div className= "w-full h-screen bg-blue-400 flex justify-center items-center">
+  <div className= "w-full h-screen bg-blue-400 flex justify-center items-center text-black">
     <div className= "w-[95%] md:w-[60%] lg:w-[40%] h-auto bg-white rounded-xl shadow-xl shadow-gray-400/90 flex flex-col">
       <p className= "text-center my-4 text-2xl font-bold border-b">Quiz de Javascript</p>
       <p className= "mt-1 mb-3 mx-3 text-lg md:text-2xl font-bold ">1. Qual a forma correta de declarar uma variável?</p>
