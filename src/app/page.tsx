@@ -7,7 +7,10 @@ import { useState } from 'react';
  const Page = () => {
 
 const answerClick = (id: number, isCorrect: boolean) => {
+  if(selectedAnswer === null) {
   setSelectedAnswer(id);
+}
+
 }
 
 const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
@@ -24,12 +27,14 @@ return(
         answer={item.question}
         isCorrect={item.correct}
         onClick={() => answerClick(item.id, item.correct)}
-        className={selectedAnswer === item.id ? (item.correct ? 'bg-green-300/30' : 'bg-red-300/30') : ''}
+        className={selectedAnswer === item.id ? (item.correct ? 'bg-green-400/50' : 'bg-red-400/50') : ''}
         />
       ))}
-      <p className ="text-center p-6 mt-6 border-t-2">{`1 de 1 perguntas`}</p>
       
-
+      {selectedAnswer !== null ? <div><p onClick={() => setSelectedAnswer(null)} className="text-center mt-3 p-3 font-bold text-3xl cursor-pointer">↻ </p> 
+      <p onClick={() => alert('Ainda não implementado')} className="text-center mt-3 p-3 font-bold text-3xl cursor-pointer"> ▶ </p>
+      </div>: <p className="text-center">Escolha uma alternativa</p>}
+      <p className ="text-center p-6 mt-6 border-t-2">{`1 de 1 perguntas`}</p>
     </div>
   </div>
   </>
